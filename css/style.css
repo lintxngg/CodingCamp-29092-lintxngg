@@ -1,0 +1,99 @@
+body {
+  font-family: 'Times New Roman', Times, serif;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #023e4d;
+}
+
+main {
+  background: #038799;
+  width: 100%;
+  max-width: 700px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Form */
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input, select, button {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #f5ecb7;
+  display: block;
+  width: 200px;
+  height: 40px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+select {
+  line-height: normal;
+}
+
+button {
+  background-color: #7a0d75;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #f273f7;
+}
+
+/* Daftar todo */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+list {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;           
+  padding: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fdfdfd;
+}
+
+
+list span {
+  flex-grow: 1;         
+  text-align: left;
+}
+
+
+list button {
+  background-color: #9b3b0f;
+  color: white;
+  border: none;
+  width: 100px;
+  height: 40px;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+li button:hover {
+  background-color: #5f0c0c;
+}
+
+.controls {
+  align-items: left;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+}

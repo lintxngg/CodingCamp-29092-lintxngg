@@ -1,25 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RevoU Mini Project Lintang</title>
-
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <main>
     <header>
-        <h1>To do(s)</h1>
+      <h1>Lintang's To Do(s)</h1>
     </header>
-    <main>
-        <section>
 
-        </section>
-    </main>
+    <!-- Form input -->
+    <section>
+      <form id="todoForm">
+        <input type="text" id="taskName" placeholder="Nama kegiatan" required>
+        <input type="date" id="taskDate" required>
+        <select id="taskStatus">
+          <option value="planned">Planned</option>
+          <option value="pending">Pending</option>
+          <option value="on going">On Going</option>
+          <option value="done">Done</option>
+        </select>
+        <button type="submit">Add To Do List</button>
+      </form>
+    </section>
+
+    <!-- Control buttons -->
+    <div class="controls">
+      <button id="deleteAll">Delete All</button>
+      <select id="filter">
+        <option value="all">All</option>
+        <option value="planned">Planned</option>
+        <option value="pending">Pending</option>
+        <option value="on going">On Going</option>
+        <option value="done">Done</option>
+      </select>
+    </div>
+
+    <!-- Display To Do List -->
+    <section>
+      <ul id="todoList"></ul>
+    </section>
+
     <footer>
-        <h4>Mini Project </h3>
+      <h4>Mini Project by Lintang</h4>
     </footer>
+  </main>
 
-    <script src="js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

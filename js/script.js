@@ -1,12 +1,48 @@
-console.log("Hello World!~");
-console.log("r u ready");
+const form = document.getElementById('todoForm');
+const todoList = document.getElementById('todoList');
+const deleteAllBtn = document.getElementById('deleteAll');
+const filter = document.getElementById('filter');
 
-//function addTodo() {}
+let todos = [];
 
-//function deleteAll() {}
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = document.getElementById('taskName').value;
+  const date = document.getElementById('taskDate').value;
+  const status = document.getElementById('taskStatus').value;
 
-//function filter() {}
+  todos.push({ name, date, status });
+  form.reset();
+  displayTodos();
+});
 
-//function validateInput() {}
+deleteAllBtn.addEventListener('click', () => {
+  todos = [];
+  displayTodos();
+});
 
-//function display
+function displayTodos() {
+  todoList.innerHTML = '';
+
+  const filterValue = filter.value;
+  const filteredTodos = todos.filter(todo =>
+    filterValue === 'all' ? true : todo.status === filterValue
+  );
+
+  filteredTodos.forEach((todo, index) => {
+    const list = document.createElement('list');
+    list.innerHTML = `
+    <span>${todo.name} - ${todo.date} - <strong>${todo.status}</strong></span>
+    <button onclick="deleteTask(${index})">Delete</button>
+  `;
+  todoList.appendChild(list);
+
+  });
+}
+
+function deleteTask(index) {
+  todos.splice(index, 1);
+  displayTodos();
+}
+
+filter.addEventListener('change', displayTodos);
